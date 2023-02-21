@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+body {
+  background: #eee;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #03446A; */
+}
+.center-container{
+    width: 30rem;
+    height: 30rem;
+    position: relative;
+    /* background-color: aqua; */
+}
+
+.background-image{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+.background-image img{
+    width: 100%;
+}
+
+.image-element{
+    position: relative;
+    display: flex;
+    /* background-color: #03446A; */
+    justify-content: center;
+    height: 180px;
+}
+.image-element img{
+    position: absolute;
+    bottom: -1.4rem;
+    width: 250px;
+    /* background-color: #eee; */
+    z-index: 2;
+}
+
+.Second-img{
+    display: none;
+}
+
+.card {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 25rem;
+  height: 15rem;
+  transform: translate(-50%,-50%);
+  /* margin: -150px; */
+  /* float: left; */
+  perspective: 1000px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 30px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .content {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+}
+
+.card:hover .First-img{
+    display: none;
+}
+.card:hover .Second-img{
+    display: initial;
+    bottom: -2.5rem;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 129, 18, 0.9) 0%, #FC3427 96.87%);
+  border-radius: 30px;
+  text-align: center;
+  /* font-size: 2.5em;s */
+  color: #FFFFFF;
+  backface-visibility: hidden;
+}
+
+.front{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.front p{
+    font-size: 2.8em;
+    /* padding:0 50px; */
+    /* background-color: #03446A; */
+}
+.back {
+  background: linear-gradient(180deg, #322859 0%, rgba(86, 69, 194, 0.72) 96.87%);
+  border-radius: 30px;
+  transform: rotateY( 180deg );
+}
+
+.back-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.back-element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.back-element img{
+    width: 40px;
+}
+
+
+
+
+@media (max-width:576px) {
+    .card{
+        top:18%;
+        width: 20rem;
+        height: 10rem;
+    }
+    .front p{
+        font-size: 2em;
+    }
+    .back-element{
+        height: 27px;
+    }
+    .back-element img{
+        width: 30px;
+    }
+    .back-element p{
+        font-size: 0.8em;
+    }
+}
